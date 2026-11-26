@@ -1,0 +1,140 @@
+:root {
+  --bg: #101010;
+  --fg: #c8c8c8;
+  --dim: #6c6c6c;
+  --accent: #5fd7d7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  scrollbar-color: var(--dim) var(--bg);
+  background: var(--bg);
+  color: var(--fg);
+  font-family:
+    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dim);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 80ch;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+fieldset {
+  margin: 0;
+  padding: 8px 2ch 16px;
+  border: 3px double var(--dim);
+}
+
+legend {
+  padding: 0 1ch;
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2ch;
+  margin-bottom: 16px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+h1,
+h2 {
+  margin: 24px 0 8px;
+  font-size: 1em;
+  color: var(--fg);
+}
+
+h1::before {
+  content: "# ";
+  color: var(--dim);
+}
+
+h2::before {
+  content: "## ";
+  color: var(--dim);
+}
+
+p,
+ul {
+  margin: 0 0 8px;
+}
+
+ul {
+  padding-left: 2ch;
+  list-style: "- ";
+}
+
+footer {
+  background: #000;
+  color: var(--fg);
+  text-align: center;
+  padding: 0 1ch;
+}
+
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 2ch;
+  margin: 16px 0;
+}
+
+.profile img {
+  width: 160px;
+  height: 160px;
+  border: 3px double var(--dim);
+  filter: grayscale(1) contrast(1.1);
+}
+
+.profile h1 {
+  margin-top: 0;
+}
+
+a:not([href]) {
+  cursor: default;
+}
+
+a:not([href]):hover {
+  background: none;
+  color: var(--accent);
+}
+
+a.dim,
+a.dim:hover {
+  color: var(--dim);
+}
